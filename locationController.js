@@ -11,7 +11,7 @@ async function apiGetLocations(req, res) {
 }
 
 async function apiAddLocation(req, res) {
-    const { name, latitude, longitude } = req.params;
+    const { name, latitude, longitude } = req.body;
     addLocation(name, latitude, longitude)
         .then(result => {
             return res.status(result.status).json({ message: result.message });
@@ -22,7 +22,7 @@ async function apiAddLocation(req, res) {
 }
 
 async function apiUpdateLocation(req, res) {
-    const { name, newLatitude, newLongitude } = req.params;
+    const { name, newLatitude, newLongitude } = req.body;
     updateLocation(name, newLatitude, newLongitude)
         .then(result => {
             return res.status(result.status).json({ message: result.message });
@@ -33,7 +33,7 @@ async function apiUpdateLocation(req, res) {
 }
 
 async function apiDeleteLocation(req, res) {
-    const { name } = req.params;
+    const { name } = req.body;
     deleteLocation(name)
         .then(result => {
             return res.status(result.status).json({ message: result.message });
