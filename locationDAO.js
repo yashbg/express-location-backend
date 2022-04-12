@@ -69,7 +69,7 @@ async function updateLocation(name, newLatitude, newLongitude) {
                         message: SERVER_ERROR_MSG
                     });
                 }
-                else if (!result.ok) {
+                else if (!result.matchedCount) {
                     reject({
                         status: 400,
                         message: 'Location does not exist'
