@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { apiGetLocations, apiAddLocation, apiUpdateLocation, apiDeleteLocation } = require('./locationController');
+const { apiGetLocations, apiAddLocation, apiUpdateLocation, apiDeleteLocation } = require('./services/locationController');
 
 const router = express.Router();
 
