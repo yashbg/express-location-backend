@@ -2,7 +2,7 @@ const { Location } = require('../models/location');
 
 const SERVER_ERROR_MSG = 'Internal Server Error';
 
-async function getLocations() {
+exports.getLocations = async () => {
     return new Promise((resolve, reject) => {
         Location.find({}, (err, locations) => {
             if (err) {
@@ -21,7 +21,7 @@ async function getLocations() {
     });
 }
 
-async function addLocation(name, latitude, longitude) {
+exports.addLocation = async (name, latitude, longitude) => {
     return new Promise((resolve, reject) => {
         Location.findOne({ name: name }, (err, location) => {
             if (err) {
@@ -52,7 +52,7 @@ async function addLocation(name, latitude, longitude) {
     });
 }
 
-async function updateLocation(name, newLatitude, newLongitude) {
+exports.updateLocation = async (name, newLatitude, newLongitude) => {
     return new Promise((resolve, reject) => {
         Location.updateOne(
             {
@@ -86,7 +86,7 @@ async function updateLocation(name, newLatitude, newLongitude) {
     });
 }
 
-async function deleteLocation(name) {
+exports.deleteLocation = async name => {
     return new Promise((resolve, reject) => {
         Location.deleteOne({ name: name }, (err, result) => {
             if (err) {
@@ -110,10 +110,3 @@ async function deleteLocation(name) {
         });
     });
 }
-
-module.exports = {
-    getLocations,
-    addLocation,
-    updateLocation,
-    deleteLocation
-};
