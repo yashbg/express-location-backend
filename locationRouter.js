@@ -4,9 +4,9 @@ const { apiGetLocations, apiAddLocation, apiUpdateLocation, apiDeleteLocation } 
 
 const router = express.Router();
 
-router.get('/location', apiGetLocations);
-router.post('/location', apiAddLocation);
-router.patch('/location', apiUpdateLocation);
-router.delete('/location', apiDeleteLocation);
+router.get('/', apiGetLocations);
+router.post('/', apiAddLocation);
+router.patch('/', apiUpdateLocation);
+router.delete('/', apiDeleteLocation);
 
 module.exports = router;

@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use('/', locationRouter);
+app.use('/locations', locationRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello!');
