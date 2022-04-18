@@ -1,4 +1,4 @@
-const { Location } = require('./models/location');
+const { Location } = require('../models/location');
 
 const SERVER_ERROR_MSG = 'Internal Server Error';
 
