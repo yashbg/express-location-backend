@@ -19,7 +19,7 @@ exports.getLocations = async () => {
             }
         });
     });
-}
+};
 
 exports.addLocation = async (name, latitude, longitude) => {
     return new Promise((resolve, reject) => {
@@ -50,7 +50,7 @@ exports.addLocation = async (name, latitude, longitude) => {
             }
         });
     });
-}
+};
 
 exports.updateLocation = async (name, newLatitude, newLongitude) => {
     return new Promise((resolve, reject) => {
@@ -84,7 +84,7 @@ exports.updateLocation = async (name, newLatitude, newLongitude) => {
             }
         );
     });
-}
+};
 
 exports.deleteLocation = async name => {
     return new Promise((resolve, reject) => {
@@ -109,4 +109,4 @@ exports.deleteLocation = async name => {
             }
         });
     });
-}
+};
